@@ -17,27 +17,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fyi-ob-8MQ">
-                                <rect key="frame" x="5" y="99" width="404" height="436"/>
+                                <rect key="frame" x="5" y="99" width="404" height="672"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rock, Paper, Scissors " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CX-nj-Dgi">
-                                        <rect key="frame" x="0.0" y="0.0" width="404" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="404" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0W4-zY-nPt">
-                                        <rect key="frame" x="0.0" y="30" width="404" height="128"/>
+                                        <rect key="frame" x="0.0" y="36" width="404" height="128"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5oA-uT-Rfz">
-                                        <rect key="frame" x="0.0" y="158" width="404" height="150"/>
+                                        <rect key="frame" x="0.0" y="164" width="404" height="150"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="OV7-FF-xAe"/>
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BUR-y7-j1V">
-                                        <rect key="frame" x="0.0" y="308" width="404" height="128"/>
+                                        <rect key="frame" x="0.0" y="314" width="404" height="128"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Select" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze9-sH-SFP">
+                                        <rect key="frame" x="0.0" y="442" width="404" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hVL-Sw-tBC">
+                                        <rect key="frame" x="0.0" y="472" width="404" height="200"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fish Rock" translatesAutoresizingMaskIntoConstraints="NO" id="TL5-7g-sjl">
+                                                <rect key="frame" x="0.0" y="0.0" width="121.5" height="200"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Paper cutting Scissors" translatesAutoresizingMaskIntoConstraints="NO" id="h0A-YF-64s">
+                                                <rect key="frame" x="141.5" y="0.0" width="121" height="200"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Paper Suck" translatesAutoresizingMaskIntoConstraints="NO" id="yK6-J7-G1D">
+                                                <rect key="frame" x="282.5" y="0.0" width="121.5" height="200"/>
+                                            </imageView>
+                                        </subviews>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="drc-Jj-0Fh"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Zl0-Dv-eEZ" appends="YES" id="o4y-9V-nph"/>
+                                        </connections>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -50,16 +77,29 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="stackView" destination="fyi-ob-8MQ" id="iRs-N5-uxD"/>
+                        <outlet property="HorizontalStackView" destination="hVL-Sw-tBC" id="9b6-ys-4QH"/>
+                        <outlet property="computerChose" destination="0W4-zY-nPt" id="K46-mX-9bF"/>
+                        <outlet property="myChoice" destination="BUR-y7-j1V" id="yL7-cD-OVy"/>
                         <outlet property="threeLetterLabel" destination="7CX-nj-Dgi" id="oMU-ZJ-6fB"/>
+                        <outletCollection property="gameImages" destination="TL5-7g-sjl" collectionClass="NSMutableArray" id="Xae-XA-73o"/>
+                        <outletCollection property="gameImages" destination="h0A-YF-64s" collectionClass="NSMutableArray" id="8J4-oB-4hG"/>
+                        <outletCollection property="gameImages" destination="yK6-J7-G1D" collectionClass="NSMutableArray" id="W16-Qw-j8J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Zl0-Dv-eEZ">
+                    <connections>
+                        <action selector="tapMe:" destination="BYZ-38-t0r" id="0Zx-fF-LDD"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="35" y="98"/>
+            <point key="canvasLocation" x="34.782608695652179" y="97.767857142857139"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Fish Rock" width="700" height="525"/>
+        <image name="Paper Suck" width="1920" height="1080"/>
+        <image name="Paper cutting Scissors" width="640" height="480"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
