@@ -78,7 +78,7 @@
                     </view>
                     <connections>
                         <outlet property="HorizontalStackView" destination="hVL-Sw-tBC" id="9b6-ys-4QH"/>
-                        <outlet property="computerChose" destination="0W4-zY-nPt" id="K46-mX-9bF"/>
+                        <outlet property="computerChoice" destination="0W4-zY-nPt" id="bCr-Ze-i4Z"/>
                         <outlet property="myChoice" destination="BUR-y7-j1V" id="yL7-cD-OVy"/>
                         <outlet property="threeLetterLabel" destination="7CX-nj-Dgi" id="oMU-ZJ-6fB"/>
                         <outletCollection property="gameImages" destination="TL5-7g-sjl" collectionClass="NSMutableArray" id="Xae-XA-73o"/>

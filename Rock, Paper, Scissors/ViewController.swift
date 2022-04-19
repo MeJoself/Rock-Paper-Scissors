@@ -22,7 +22,7 @@ class ViewController: UIViewController
      
     var images:[UIImage] = []
     
-    var meChoice = 4
+    var iChoice = 4
     
     var RPS = ["Fish Rock", "Paper cutting Scissors", "Paper Suck"]
     
@@ -49,14 +49,36 @@ class ViewController: UIViewController
         {
             if view.frame.contains(selectedPoint)
             {
-                meChoice = view.tag
-                myChoice.image = images[meChoice]
+                iChoice = view.tag
+                myChoice.image = images[iChoice]
             }
         }
         
     //Assign Computer Choice Randomly
-       // let randomNum = Int.random(in: 0...2)
-      //  aiSelection.image = images[randomNum]
+        let randomNum = Int.random(in: 0...2)
+     computerChoice.image = images[randomNum]
+        
+    //Create the Alert Varable
+        var message = "What is your name?"
+        var alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+    //Call Alert for display Endgame
+        if iChoice == randomNum
+        {
+         message = "tie"
+        }
+        
+        else if iChoice == 1 && randomNum == 2
+        {
+          message = "You Win!"
+        }
+        
+        else if iChoice == 1 && randomNum == 0
+        {
+          message = "You Lose!"
+        }
+    
+    
+    
     }
 }
 
