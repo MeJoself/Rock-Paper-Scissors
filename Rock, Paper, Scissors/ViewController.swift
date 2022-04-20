@@ -60,7 +60,7 @@ class ViewController: UIViewController
         
     //Create the Alert Varable
         var message = "What is your name?"
-        var alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+       
     //Call Alert for display Endgame
         if iChoice == randomNum
         {
@@ -77,8 +77,46 @@ class ViewController: UIViewController
           message = "You Lose!"
         }
     
+        else if iChoice == 0 && randomNum == 1
+        {
+          message = "You Win!"
+        }
+        
+        else if iChoice == 0 && randomNum == 2
+        {
+          message = "You Lose!"
+        }
+        
+        else if iChoice == 2 && randomNum == 0
+        {
+          message = "You Win!"
+        }
+            
+        else if iChoice == 2 && randomNum == 1
+        {
+          message = "You Lose!"
+        }
+        
+        else
+        {
+          message = "You Lose!"
+        }
+        var alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+    //Oks alert
+        let ok = UIAlertAction (title: "OK", style: .default)
+        {
+            action in print("OK Pressed")
+            self.myChoice.image = UIImage(named: "Selected")
+            self.computerChoice.image = UIImage(named: "Select")
+        }
+        alert.addAction(ok)
+        
+        //Present Alert
+        self.present(alert, animated: true, completion: nil)
+    
     
     
     }
+    
 }
 
