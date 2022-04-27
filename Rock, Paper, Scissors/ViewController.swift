@@ -78,7 +78,7 @@ class ViewController: UIViewController
         }
     
         else if iChoice == 0 && randomNum == 1
-        {
+         {
           message = "You Win!"
         }
         
